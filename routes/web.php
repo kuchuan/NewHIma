@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+Route::get('/', 'HimanabiController@index')->name('himanabi.index');  //追加
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

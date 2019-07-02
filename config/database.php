@@ -54,6 +54,7 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
+            'unix_socket'   => env('DB_SOCKET', null), // 追加
             'options' => array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]),
