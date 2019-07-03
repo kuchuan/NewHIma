@@ -14,12 +14,16 @@ class CreateSkillUserTable extends Migration
     public function up()
     {
         Schema::create('skill_user', function (Blueprint $table) {
-                // $table->increments('id');
-                // $table->timestamps();
-                $table->bigIncrements('id');
-                $table->bigInteger('user_id');
-                $table->bigInteger('skill_id');
-                $table->timestamps();
+            // $table->increments('id');
+            // $table->timestamps();
+            $table->bigIncrements('id');
+            $table->bigInteger('user_id');
+            $table->bigInteger('skill_id');
+            $table->timestamps();
+
+            // 外部キー制約
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            // $table->foreign('skill_id')->references('id')->on('skills')->onDelete('cascade');
         });
     }
 
